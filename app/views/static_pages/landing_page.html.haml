@@ -1,2 +1,23 @@
-%h1 StaticPages#landing_page
-%p Find me in app/views/static_pages/landing_page.html.haml
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    %a.navbar-brand{:href => "#"}
+      %i.fas.fa-home.me-2>
+      Heather's Ruby
+    %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavAltMarkup", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarNavAltMarkup.collapse.navbar-collapse
+      .navbar-nav
+        %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
+        %a.nav-link{:href => "#"} Features
+        %a.nav-link{:href => "#"} Pricing
+        %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+.container
+  %h1 Hello World
+  = link_to courses_path, class: 'btn btn-success m-1' do
+    .fa.fa-book
+    Course
+  = link_to privacy_policy_path, class: "btn btn-warning" do
+    %i.far.fa-file-word
+    Privacy Policy
+
+

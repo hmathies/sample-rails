@@ -11,3 +11,11 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import 'bootstrap/dist/js/bootstrap'
+import 'bootstrap/dist/css/bootstrap'
+import "../stylesheets/application"
+import "@fortawesome/fontawesome-free/css/all.css"
+
+require("trix")
+require("@rails/actiontext")
