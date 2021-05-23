@@ -1,16 +1,31 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
   .container-fluid
-    %a.navbar-brand{:href => "#"}
-      %i.fas.fa-home.me-2>
-      Heather's Ruby
-    %button.navbar-toggler{"aria-controls" => "navbarNavAltMarkup", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNavAltMarkup", "data-bs-toggle" => "collapse", :type => "button"}
+    %a.navbar-brand{:href => "#"} Heather's Ruby 
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
-    #navbarNavAltMarkup.collapse.navbar-collapse
-      .navbar-nav
-        %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
-        %a.nav-link{:href => "#"} Features
-        %a.nav-link{:href => "#"} Pricing
-        %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+    #navbarSupportedContent.collapse.navbar-collapse
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item
+          %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
+        %li.nav-item
+          %a.nav-link{:href => "#"} Link
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
+            Dropdown
+          %ul.dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            %li
+              %a.dropdown-item{:href => "#"} Action
+            %li
+              %a.dropdown-item{:href => "#"} Another action
+            %li
+              %hr.dropdown-divider/
+            %li
+              %a.dropdown-item{:href => "#"} Something else here
+        %li.nav-item
+          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+      %form.d-flex
+        %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+        %button.btn.btn-outline-success{:type => "submit"} Search
 .container
   %h1 Hello World
   = link_to courses_path, class: 'btn btn-success m-1' do
@@ -19,3 +34,4 @@
   = link_to privacy_policy_path, class: "btn btn-warning" do
     %i.far.fa-file-word
     Privacy Policy
+
