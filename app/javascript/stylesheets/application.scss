@@ -1,5 +1,16 @@
-@import "bootstrap";
-// @import "font-awesome-sprockets";
-// @import "font-awesome";
-@import './actiontext.scss'
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import './actiontext.scss';
 
+:root {
+  --light: 80;
+  /* the threshold at which colors are considered "light." Range: integers from 0 to 100,
+recommended 50 - 70 */
+  --threshold: 60;
+}
+
+.btn {
+  /* Any lightness value below the threshold will result in white, any above will result in black */
+  --switch: calc((var(--light) - var(--threshold)) * -100%) !important;
+  color: hsl(0, 0%, var(--switch)) !important;
+}
