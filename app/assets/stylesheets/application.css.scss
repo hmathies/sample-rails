@@ -16,4 +16,15 @@
  
  @import "font-awesome-sprockets";
  @import "font-awesome";
- 
+//  :root {
+//   --light: 80;
+//   /* the threshold at which colors are considered "light." Range: integers from 0 to 100,
+// recommended 50 - 70 */
+//   --threshold: 60;
+// }
+
+// .btn1 {
+//   /* Any lightness value below the threshold will result in white, any above will result in black */
+//   --switch: calc((var(--light) - var(--threshold)) * -100%);
+//   color: hsl(0, 0%, var(--switch));
+// }

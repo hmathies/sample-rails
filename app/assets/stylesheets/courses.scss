@@ -1,3 +1,16 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+:root {
+  --light: 80;
+  /* the threshold at which colors are considered "light." Range: integers from 0 to 100,
+recommended 50 - 70 */
+  --threshold: 60;
+}
+
+.btn {
+  /* Any lightness value below the threshold will result in white, any above will result in black */
+  --switch: calc((var(--light) - var(--threshold)) * -100%);
+  color: hsl(0, 0%, var(--switch));
+}

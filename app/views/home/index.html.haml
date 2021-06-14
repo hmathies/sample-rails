@@ -1,10 +1,52 @@
 
-.container
-  %h1 Hello World
-  = link_to courses_path, class: 'btn btn-success m-1' do
-    .fa.fa-book
-    Course
-  = link_to privacy_policy_path, class: "btn btn-warning" do
-    %i.far.fa-file-word
-    Privacy Policy
-
+.display-1
+  Which one is Dummer?
+.p-4
+  .form.inline.my-2.my-lg-0.row.col-4
+    = form_tag(courses_path, method: :get) do 
+      .input-group 
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: "form-control"
+        %span.input-group-append
+          %button.btn.btn-primary.btn-md{:type => "submit"}
+            %span.fa.fa-search{"aria-hidden" => "true"}
+.p-4   
+.card-group 
+  .card.card-body 
+    %h1
+      .fa.fa-graduation-cap 
+    = Course.count 
+    online courses 
+    .row 
+    Don't be Dummer
+  .card.card-body 
+    %h1
+      .fa.fa-chalkboard-teacher 
+    = Course.distinct.count(:user_id)
+    Smart Instructors 
+    .row 
+    Get your smart on!
+  .card.card-body 
+    %h1
+      .fa.fa-user-graduate 
+    = User.count 
+    active learners
+    .row 
+    Join the smarties 
+%hr
+%h2
+  Popular Courses 
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+%hr 
+%h2 
+  Top rated Courses 
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+%hr 
+%h2
+  Latest Courses
+.card-columns
+  - @latest_courses.each do |course|
+    = render 'courses/course', course: course
