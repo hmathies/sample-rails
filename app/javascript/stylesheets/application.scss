@@ -14,3 +14,12 @@ recommended 50 - 70 */
   --switch: calc((var(--light) - var(--threshold)) * -100%) !important;
   color: hsl(0, 0%, var(--switch)) !important;
 }
+
+.alert-div {
+  display: flex;
+  justify-content: space-between;
+
+  .flash-msg {
+    align-self: center;
+  }
+}
